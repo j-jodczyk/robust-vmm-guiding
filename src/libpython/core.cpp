@@ -2590,4 +2590,5 @@ BOOST_PYTHON_MODULE(mitsuba) {
 
     export_core();
     export_render();
+    export_guiding();
 }

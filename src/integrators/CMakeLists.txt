@@ -48,6 +48,10 @@ add_integrator(multichannel misc/multichannel.cpp)
 add_integrator(field misc/field.cpp)
 
 
+# Guiding techniques
+include_directories("${CMAKE_SOURCE_DIR}/3rdparty/lightpmm/include")
+add_integrator(pathguiding pathguiding/pathguiding.cpp)
+
 # Bidirectional techniques
 add_bidir(bdpt bdpt/bdpt.h bdpt/bdpt.cpp
         bdpt/bdpt_proc.h bdpt/bdpt_proc.cpp

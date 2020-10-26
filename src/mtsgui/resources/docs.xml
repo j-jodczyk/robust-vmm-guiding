@@ -744,6 +744,153 @@
         </param>
     </plugin>
 
+    <plugin type="integrator" name="pathguiding" readableName="Path Guiding" show="true" className="PathGuiding" extends="MonteCarloIntegrator">
+        <descr>
+            <p>Robust Fitting of Parallax-Aware Mixtures for Path Guiding</p>
+        </descr>
+        <!-- render settings -->
+        <param name="bsdfProbability" readableName="BSDF probability" type="float" default="0.5">
+            Determines the probability of choosing bsdf sampling over path guiding.
+        </param>
+        <param name="useCosineProduct" readableName="use cosine product" type="boolean" default="true">
+            If enabled, the vMF mixture product distribution with a vMF approximation of the surface cosine lobe is used.
+        </param>
+        <param name="useBSDFProduct" readableName="use BSDF product" type="boolean" default="false">
+            If enabled, the vMF mixture product distribution with a vMF approximation of the surface's BSDF lobe(s) (1 glossy + 1 diffuse) is used.
+            This overrides the cosine product, as the cosine is included in the BSDF approximation.
+        </param>
+        <param name="parallaxCompensation" readableName="parallax compensation" type="boolean" default="true">
+            Compensate for the parallax shift within guiding regions.
+        </param>
+        <!--<param name="disableParallaxAfterTraining" readableName="disable parallax after training" type="boolean" default="false" importance="1">
+            Disable parallax compensation after training.<br/>
+            Nice for visualization. Not recommended in practice.
+        </param>-->
+        <!--<param name="adrr" readableName="adjoint-driven Russian roulette" type="boolean" default="false" importance="1">
+            Use adjoint-driven Russian roulette.
+            The implementation is not particularly optimized, so please do not use it for equal-time comparisons.
+        </param>-->
+        <param name="usePowerHeuristic" readableName="use power heuristic" type="boolean" default="false" importance="1">
+            Use the power heuristic for MIS.
+        </param>
+        <param name="useNee" readableName="use next-event estimation" type="boolean" default="true">
+            Chooses whether next-event estimation is used in the integrator.
+        </param>
+        <param name="guideDirectLight" readableName="guide direct light" type="boolean" default="true" importance="1">
+            Guide direct light contributions.
+        </param>
+        <param name="accountForDirectLightMiWeight" readableName="account for direct light MI weight" type="boolean" default="true" importance="1">
+            Account for the MI weight of direct light contributions when collecting sample data.
+            If enabled, only the ratio of direct light corresponding to the BSDF/Guiding MI weight is being guided.
+        </param>
+        <!--<param name="minSPPToTrustGuidingCaches" readableName="min previous SPP to trust guiding caches" type="integer" default="12" importance="1">
+            Min previous SPP to trust guiding caches.
+            ADRR and the direct light MI weight are forced off until the given number of SPP is reached.
+        </param>-->
+        <!-- sample collection and fit settings -->
+        <param name="splatSamples" readableName="splat samples" type="boolean" default="true" importance="1">
+            Stochastically splat sample positions.
+        </param>
+        <param name="maxSamplesPerLeafNode" readableName="maximum number of samples per leaf node" type="integer" default="32768" importance="1">
+            Determines the maximum number of samples per leaf node in the spatial tree,
+            before the node is split (unless maximum tree depth is reached).
+        </param>
+        <!--<param name="decayOnSpatialSplit" readableName="confidence decay on spatial splits" type="float" default="0.25" importance="1">
+            Decay factor applied to the confidence of previous statistics on spatial splits.
+        </param>-->
+        <!--<param name="minSamplesToStartFitting" readableName="minimum number of samples to start fitting" type="integer" default="128" importance="1">
+            Minimum number of valid samples to start the training process that produces local guiding distributions.
+        </param>-->
+        <param name="maxTreeDepth" readableName="maximum tree depth" type="integer" default="32" importance="1">
+            Determines the maximum depth of the spatial tree.
+        </param>
+        <!--<param name="update" readableName="update" type="boolean" default="true" importance="1">
+            If enabled, guiding information from previous iterations is retained and combined with the new information.
+            Otherwise, all information from previous training iterations is discarded.
+        </param>-->
+        <param name="deterministic" readableName="deterministic (slow, for debugging)" type="boolean" default="false">
+            If enabled, deterministic behavior is enforced, including the forced usage of the deterministic sampler.
+            <b>This results in considerable overhead and should be disabled by default.</b>
+        </param>
+        <param name="numInitialComponents" readableName="initial number of mixture components" type="integer" default="16" importance="1">
+            Initial number of mixture components used to initialize the EM fit before splitting and merging.
+        </param>
+        <param name="splitAndMerge" readableName="split and merge" type="boolean" default="true">
+            If enabled, splitting and merging is performed after fitting mixtures.
+        </param>
+        <param name="splitMinDivergence" readableName="split: min divergence" type="float" default="0.5">
+            Minimum divergence estimate required for splitting.
+        </param>
+        <param name="mergeMaxDivergence" readableName="merge: max divergence" type="float" default="0.025">
+            Maximum divergence estimate to allow merging.
+        </param>
+        <!-- import/export -->
+        <!--<param name="exportIntermediateRenders" readableName="export intermediate renders" type="boolean" default="false" importance="1">
+            Export intermediate rendering results each training iteration.
+        </param>
+        <param name="exportIntermediateSamples" readableName="export intermediate samples" type="boolean" default="false" importance="1">
+            Export intermediate samples each training iteration.
+        </param>
+        <param name="exportIntermediateTrees" readableName="export intermediate trees" type="boolean" default="false" importance="1">
+            Export intermediate path guiding trees each training iteration.
+        </param>
+        <param name="exportFinalTree" readableName="export final tree" type="boolean" default="false" importance="1">
+            Export the final path guiding tree after rendering.
+        </param>
+        <param name="importTreeFile" readableName="import tree file" type="string" default="" importance="1">
+            Import the path guiding tree from this file before rendering.
+            Path is relative to the training directory.
+        </param>
+        <param name="trainingDirectory" readableName="training directory" type="string" default="./training/" importance="1">
+            Folder, where training results are being stored.
+        </param>-->
+        <!-- alternative rendering options -->
+        <!--<param name="renderMeasurementEstimate" readableName="render measurement estimate" type="boolean" default="false" importance="1">
+            Render the ADRR measurement estimate.<br/>
+            <b>Requires that ADRR is enabled.</b>
+        </param>
+        <param name="renderNumComponents" readableName="render number of components" type="boolean" default="false" importance="1">
+            Render the number of mixture components at the first intersection.
+        </param>
+        <param name="renderIndirectLight" readableName="render indirect light" type="boolean" default="false" importance="1">
+            Render only indirect light transport.
+        </param>-->
+        <!-- training samples -->
+        <param name="trainingSamples" readableName="training samples" type="integer" default="32">
+            Number of samples used for training before rendering starts.<br/>
+            <b>Set to 0 when training for a fixed time.</b>
+        </param>
+        <!--<param name="maxSamplesPerIteration" readableName="max samples per iteration" type="integer" default="4" importance="1">
+            Maximum number of samples per training iteration.<br/>
+            The samples per iteration start at 4 and double each iteration,
+            unless limited by this value.
+        </param>-->
+        <!-- progressive rendering -->
+        <param name="trainingMaxSeconds" readableName="training time (seconds)" type="integer" default="0">
+            Maximum number of seconds used for training.<br/>
+            <b>Set to 0 when training for a fixed number of samples.</b>
+        </param>
+        <param name="renderMaxSeconds" readableName="render time (seconds)" type="integer" default="0">
+            Maximum number of seconds used for rendering.<br/>
+            Set to 0, to render a single iteration.<br/>
+            <b>
+                This still uses the regular sampler to render each progressive iteration.
+                Set it to at most 4 SPP to make sure that the requested time can be matched closely.
+            </b>
+        </param>
+    </plugin>
+
+    <plugin type="integrator" name="field" readableName="Field integrator" show="true" className="FieldIntegrator" extends="SamplingIntegrator">
+        <descr>
+            <p>Field Integrator (see Mitsuba documentation)</p>
+        </descr>
+        <param name="field" readableName="field" type="string" default="">
+            Must be one of the following:
+            position, relPosition, distance, geoNormal, shNormal,
+            primIndex, samplingRates, shapeIndex, transmission, or uv
+        </param>
+    </plugin>
+
     <plugin type="rfilter" readableName="Box filter" name="box" show="true" className="BoxFilter" extends="ReconstructionFilter">
         <descr>Box filter: the fastest, but also about the worst possible
             reconstruction filter, since it is extremely prone to aliasing.
@@ -1014,4 +1161,13 @@
             simply set it to the current frame index.
         </param>
     </plugin>
+
+    <plugin type="sampler" name="deterministic" readableName="Deterministic sampler" show="true" className="DeterministicSampler" extends="Sampler">
+        <descr>
+            <p>The deterministic sampler provides repeatable random values for each pixel and subsample,
+            which are useful for debugging purposes.</p>
+        </descr>
+        <param name="sampleCount" readableName="Samples per pixel" type="integer" default="4">Number of samples per pixel</param>
+    </plugin>
+
 </documentation>

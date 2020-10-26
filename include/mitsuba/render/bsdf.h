@@ -259,7 +259,9 @@ public:
         /// Supports interactions on the back-facing side
         EBackSide             = 0x10000,
         /// Uses extra random numbers from the supplied sampler instance
-        EUsesSampler          = 0x20000
+        EUsesSampler          = 0x20000,
+        /// The lobe is based on incident radiance rather than surface reflectance
+        EGuiding              = 0x40000
     };
 
     /// Convenient combinations of flags from \ref EBSDFType

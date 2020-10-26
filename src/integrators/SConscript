@@ -40,4 +40,7 @@ plugins += bidirEnv.SharedLibrary('erpt',
         ['erpt/erpt.cpp', 'erpt/erpt_proc.cpp']
 )
 
+# PathGuiding
+plugins += env.SharedLibrary('pathguiding', ['pathguiding/pathguiding.cpp'])
+
 Export('plugins')
