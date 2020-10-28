@@ -860,10 +860,12 @@
             Number of samples used for training before rendering starts.<br/>
             <b>Set to 0 when training for a fixed time.</b>
         </param>
-        <!--<param name="maxSamplesPerIteration" readableName="max samples per iteration" type="integer" default="4" importance="1">
-            Maximum number of samples per training iteration.<br/>
-            The samples per iteration start at 4 and double each iteration,
-            unless limited by this value.
+        <param name="samplesPerIteration" readableName="samples per iteration" type="integer" default="4" importance="1">
+            Number of samples per training iteration.
+        </param>
+        <!--<param name="expGrowSamplesPerIteration" readableName="exp. grow spp. per iteration" type="boolean" default="false" importance="1">
+            If enabled, the number of samples per pixel is doubled in each successive training iteration.<br/>
+            <b>Only use this for simulating the exponential training approach by previous methods, also disable the update to truly reproduce their behavior.</b>
         </param>-->
         <!-- progressive rendering -->
         <param name="trainingMaxSeconds" readableName="training time (seconds)" type="integer" default="0">

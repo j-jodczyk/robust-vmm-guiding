@@ -110,7 +110,7 @@ private:
     uint32_t m_minSPPToTrustGuidingCaches;
     uint32_t m_trainingMaxSeconds;
     uint32_t m_renderMaxSeconds;
-    uint32_t m_maxSamplesPerIteration;
+    uint32_t m_samplesPerIteration;
     uint32_t m_postponedSPPOfData;
     float m_bsdfProbability;
     bool m_exportIntermediateRenders;
@@ -131,6 +131,7 @@ private:
     bool m_useCosineProduct;
     bool m_useBSDFProduct;
     bool m_disableParallaxAfterTraining;
+    bool m_expGrowSamplesPerIteration;
 
     bool m_collectZeroValuedSamples;
     bool m_training;
@@ -161,7 +162,8 @@ public:
 
         //training spp/time
         m_trainingSamples               = static_cast<uint32_t>(props.getSize("trainingSamples", 32));
-        m_maxSamplesPerIteration        = static_cast<uint32_t>(props.getSize("maxSamplesPerIteration", 4));
+        m_samplesPerIteration           = static_cast<uint32_t>(props.getSize("samplesPerIteration", 4));
+        m_expGrowSamplesPerIteration    = props.getBoolean("expGrowSamplesPerIteration", false);
         m_trainingMaxSeconds            = static_cast<uint32_t>(props.getSize("trainingMaxSeconds", 0UL));
         //progressive rendering
         m_renderMaxSeconds              = static_cast<uint32_t>(props.getSize("renderMaxSeconds", 0UL));
@@ -273,8 +275,10 @@ public:
             trainingSamplerProps.setPluginName("deterministic");
         }
 
+        Log(EInfo, "Starting training with %uspp per iteration%s.", m_samplesPerIteration, (m_expGrowSamplesPerIteration ? " (growing exponentially)" : ""));
+
         uint32_t samplesUsed = 0;
-        uint32_t numSamples = 4>>1;
+        uint32_t numSamples = std::min(m_samplesPerIteration, m_trainingSamples);
 
         for (int i=0; (samplesUsed < m_trainingSamples || m_trainingMaxSeconds) && !m_canceled; ++i)
         {
@@ -283,9 +287,6 @@ public:
             m_adrr                          =  trustGuidingCaches && adrr();
             m_accountForDirectLightMiWeight =  trustGuidingCaches && accountForDirectLightMiWeight();
             m_rrDepth                       = (trustGuidingCaches) ? rrDepth() : m_maxDepth;
-
-            //exponential growth of samples each iteration until the limit is reached
-            numSamples = std::min(m_maxSamplesPerIteration, numSamples<<1);
 
             if (numSamples < m_trainingSamples-samplesUsed || m_trainingMaxSeconds)
             {
@@ -296,8 +297,6 @@ public:
                 numSamples = m_trainingSamples-samplesUsed;
                 Log(EInfo, "rendering training iteration %i with %ispp (final training iteration)", i, numSamples);
             }
-
-            samplesUsed += numSamples;
 
             trainingSamplerProps.removeProperty("sampleCount");
             trainingSamplerProps.setSize("sampleCount", numSamples);
@@ -330,11 +329,21 @@ public:
 
             sched->unregisterResource(trainingSamplerResID);
 
+            const uint32_t currentIterationNumSamples = numSamples;
+            samplesUsed += currentIterationNumSamples;
+
+            if (m_expGrowSamplesPerIteration)
+            {
+                numSamples = numSamples<<1;
+                // add remaining samples to the last iteration when they run out
+                if (m_trainingSamples-samplesUsed-numSamples < numSamples)
+                    numSamples = m_trainingSamples-samplesUsed;
+            }
+
             if (m_trainingMaxSeconds)
             {
                 const Float iterationSeconds = trainingTimer->lap();
-                const size_t nextIterationSamples = numSamples = std::min(m_maxSamplesPerIteration, numSamples<<1);
-                const Float nextIterationSecondsEstimate = iterationSeconds*static_cast<Float>(nextIterationSamples)/static_cast<Float>(numSamples);
+                const Float nextIterationSecondsEstimate = iterationSeconds*static_cast<Float>(numSamples)/static_cast<Float>(currentIterationNumSamples);
                 const Float seconds = trainingTimer->getSeconds();
                 if (seconds+nextIterationSecondsEstimate >= m_trainingMaxSeconds)
                     break;
