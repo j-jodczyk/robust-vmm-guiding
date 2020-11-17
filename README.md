@@ -17,9 +17,9 @@ Make sure to clone the repository with the `--recurse-submodules` option, to als
 If you forgot the `--recurse-submodules` flag, you can use `git submodule update --init --recursive` to clone the submodule afterwards.
 
 ## Compiling Mitsuba
-For compilation, have a look at the [Mitsuba documentation](http://mitsuba-renderer.org/docs.html).
-We did not add any new dependencies.
-If you're running Ubuntu, you can install the required prerequisites using `install_prerequesites_ubuntu.sh`.
+For compilation, have a look at the [Mitsuba documentation](http://mitsuba-renderer.org/docs.html), but note that the documentation is a bit outdated and some package names have changed.
+Also note that we replaced GLEW-mx with GLEW, since GLEW-mx is no longer maintained.
+If you're running Ubuntu, you can install the required prerequisites using `install_prerequisites_ubuntu.sh`.
 
 With the prerequisites installed, the code can be compiled on Linux using SCons: (append `-jX` for parallel compilation, e.g. `-j8`)
 
@@ -31,8 +31,8 @@ Let us know if any changes to the configuration files are necessary for other op
 We have so far tested compilation on Ubuntu 18.04, 20.04, and openSUSE Tumbleweed.
 
 ### Compiling the GUI
-For compiling the GUI, check the configuration for Qt5 in `data/scons/qt5.py`.
-We have modified it for our systems, where all Qt packages start with a *Qt5* prefix rather than just *Qt*.
+If you have issues compiling the GUI, and are sure that all prerequisites are installed, check the configuration for the Qt5 module names in `data/scons/qt5.py`.
+In line 449, we added `.replace('Qt','Qt5')`, to replace the *Qt* prefix with *Qt5*, which appears to be the default on modern Linux distributions.
 To simplify compilation on modern systems, we have also replaced GLEW-mx with GLEW.
 
 ## Running Mitsuba
@@ -45,12 +45,12 @@ The simplest way to do this is using the `setpath.sh` script:
 
 ## Reproducing the results
 To reproduce the paper's main results shown in Figure 8 and Table 3, you can simply run the provided script `reproduce_results.sh`.
-On a fresh installation of Ubuntu 20.04, you can first run `install_prerequesites_ubuntu.sh` and then `compile.sh` to compile Mitsuba.
+On a fresh installation of Ubuntu 20.04, you can first run `install_prerequisites_ubuntu.sh` and then `compile.sh` to compile Mitsuba.
 Other operating systems should work as well, but you will have to install the necessary dependencies yourself.
 
-Reproducing the results on similar Hardware should take about 4-5 Hours.
+Reproducing the results on similar hardware should take about 4-5 hours.
 Each of the reproduced experiments was originally run for 10 minutes and are now configured for a set amount of samples for hardware-independent reproduction.
-On a 8-Core desktop CPU you're looking at about 12 Hours total.
+On a 8-Core desktop CPU you're looking at about 12 hours total.
 
 Note that we cleaned up the code and made some small optimizations.
 The code should now run slightly faster than the reported numbers when run on the same hardware.

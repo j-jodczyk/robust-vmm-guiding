@@ -3,7 +3,7 @@
 if [ ! -f "dist/mitsuba" ]
 then
     echo You first need to compile Mitsuba.
-    echo on Linux, you can just run compile.sh
+    echo On Linux, you can just run compile.sh
     exit 1
 fi
 
