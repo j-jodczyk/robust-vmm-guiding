@@ -438,7 +438,7 @@ def enable_modules(self, modules, debug=False, crosscompiling=False) :
                         self.AppendUnique(LIBPATH=[os.path.join("$QTDIR","lib")])
                         self.AppendUnique(CPPPATH=[os.path.join("$QTDIR","include","qt5")])
                         self.AppendUnique(CPPPATH=[os.path.join("$QTDIR","include","qt5",module)])
-                pcmodules = [module.replace('Qt','Qt5')+debugSuffix for module in modules if module not in pclessModules ]
+                pcmodules = [module+debugSuffix for module in modules if module not in pclessModules ]
                 if 'QtDBus' in pcmodules:
                         self.AppendUnique(CPPPATH=[os.path.join("$QTDIR","include","qt5","QtDBus")])
                 if "QtAssistant" in pcmodules:
@@ -446,7 +446,7 @@ def enable_modules(self, modules, debug=False, crosscompiling=False) :
                         pcmodules.remove("QtAssistant")
                         pcmodules.append("QtAssistantClient")
                 if sys.platform.startswith('linux'):
-                        self.ParseConfig('pkg-config %s --libs --cflags'% ' '.join(pcmodules))
+                        self.ParseConfig('pkg-config %s --libs --cflags'% ' '.join(pcmodules).replace('Qt','Qt5'))
                 elif sys.platform == 'darwin':
                         for module in pcmodules:
                                 #self.AppendUnique(CPPPATH="$QTDIR/frameworks/%s.framework/Versions/5/Headers" % module)
