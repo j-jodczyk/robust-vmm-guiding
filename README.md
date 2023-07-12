@@ -1,7 +1,7 @@
 Robust Fitting of Parallax-Aware Mixtures for Path Guiding
 ==========================================================
 
-This repository contains the author's implementation of ["Robust Fitting of Parallax-Aware Mixtures for Path Guiding"](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/computergrafik/lehrstuhl/veroeffentlichungen/publications-since-2012/robust-fitting-of-parallax-aware-mixtures-for-path-guiding/).
+This repository contains the author's implementation of ["Robust Fitting of Parallax-Aware Mixtures for Path Guiding"](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/computergrafik/lehrstuhl/veroeffentlichungen/robust-fitting-of-parallax-aware-mixtures-for-path-guiding/).
 It is implemented as a plugin for the [Mitsuba renderer](http://mitsuba-renderer.org/).
 If you have any questions, do not hesitate to ask Lukas Ruppert [lukas.ruppert@uni-tuebingen.de](mailto:lukas.ruppert@uni-tuebingen.de) and/or Sebastian Herholz [sebastian.herholz@gmail.com](mailto:sebastian.herholz@gmail.com).
 
