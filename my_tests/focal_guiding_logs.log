@@ -1,0 +1,319 @@
+2024-09-28 15:51:18 INFO  main [mitsuba.cpp:274] Mitsuba version 0.6.0 (Linux, 64 bit), Copyright (c) 2017 Wenzel Jakob
+2024-09-28 15:51:18 INFO  main [mitsuba.cpp:377] Parsing scene description from "./scene/modern-hall/modern-hall.xml" ..
+2024-09-28 15:51:18 INFO  main [scenehandler.cpp:675] In file "/mitsuba/scene/modern-hall/modern-hall.xml" (near line 18): Parsing included file "focal_path.xml" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/focal_path.so" ..
+root weight: 8.000e-20
+node count: 1 -> 585 -> 585
+root weight: 8.000e-20
+node count: 1 -> 585 -> 585
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] budget: 300
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] dumpPrimaryRays: false
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] dumpScene: false
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] iterationBudget: 10
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] iterationCount: 15
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] maxDepth: 40
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] normalBinning: disabled
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] orth.minDepth: 0
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] orth.outliers: 0
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] orth.threshold: 0.001
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] rrDepth: 40
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] samplingMode: 2
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] strictNormals: true
+2024-09-28 15:51:18 INFO  main [MIFocalGuidingPathTracer] unboundedSplatting: true
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/independent.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/box.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/hdrfilm.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/perspective.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/dielectric.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/bitmap.so" ..
+2024-09-28 15:51:18 INFO  main [BitmapTexture] Loading texture "wood5.jpg"
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/lanczos.so" ..
+2024-09-28 15:51:18 INFO  main [MIPMap] Generating MIP map cache file "/mitsuba/./scene/modern-hall/textures/wood5.mip" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/roughplastic.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/twosided.so" ..
+2024-09-28 15:51:18 INFO  main [BitmapTexture] Loading texture "Tiles.jpg"
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/diffuse.so" ..
+2024-09-28 15:51:18 INFO  main [BitmapTexture] Loading texture "Wallpaper.jpg"
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/roughconductor.so" ..
+2024-09-28 15:51:18 INFO  main [spectrum.cpp:599] "Cu.eta.spd": loaded a spectral power distribution with 55 entries (between 302.400421 and 885.601257 nm)
+2024-09-28 15:51:18 INFO  main [spectrum.cpp:599] "Cu.k.spd": loaded a spectral power distribution with 55 entries (between 302.400421 and 885.601257 nm)
+2024-09-28 15:51:18 INFO  main [spectrum.cpp:599] "Cu.eta.spd": loaded a spectral power distribution with 55 entries (between 302.400421 and 885.601257 nm)
+2024-09-28 15:51:18 INFO  main [spectrum.cpp:599] "Cu.k.spd": loaded a spectral power distribution with 55 entries (between 302.400421 and 885.601257 nm)
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/difftrans.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/area.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/rectangle.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/cube.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/obj.so" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh008.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh008: 5184 triangles, 2664 vertices (merged 12888 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh008.obj" (took 15 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh004.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh004: 5184 triangles, 2664 vertices (merged 12888 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh004.obj" (took 12 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh003.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh003: 5184 triangles, 2664 vertices (merged 12888 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh003.obj" (took 15 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh006.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh006: 5184 triangles, 2664 vertices (merged 12888 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh006.obj" (took 13 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh012.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh012: 444 triangles, 882 vertices (merged 450 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh012.obj" (took 2 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh013.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh013: 5184 triangles, 2664 vertices (merged 12888 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh013.obj" (took 13 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh010.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh010: 32 triangles, 60 vertices (merged 36 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh010.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh015.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh015: 32 triangles, 60 vertices (merged 36 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh015.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh002.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh002: 32 triangles, 60 vertices (merged 36 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh002.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh007.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh007: 32 triangles, 60 vertices (merged 36 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh007.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh005.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh005: 12 triangles, 20 vertices (merged 16 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh005.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh016.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh016: 120 triangles, 204 vertices (merged 156 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh016.obj" (took 1 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh017.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh017: 20 triangles, 40 vertices (merged 20 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh017.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh018.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh018: 2 triangles, 4 vertices (merged 2 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh018.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh011.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh011: 32 triangles, 30 vertices (merged 66 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh011.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/homogeneous.so" ..
+2024-09-28 15:51:18 INFO  main [PluginManager] Loading plugin "plugins/isotropic.so" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh014.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh014: 36 triangles, 72 vertices (merged 36 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh014.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh001.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh001: 924 triangles, 2016 vertices (merged 756 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh001.obj" (took 6 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh000.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh000: 3127 triangles, 2075 vertices (merged 7306 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh000.obj" (took 13 ms)
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Loading geometry from "Mesh009.obj" ..
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Mesh009: 146 triangles, 110 vertices (merged 328 vertices).
+2024-09-28 15:51:18 INFO  main [WavefrontOBJ] Done with "Mesh009.obj" (took 0 ms)
+2024-09-28 15:51:18 INFO  ren0 [KDTreeBase] Constructing a SAH kd-tree (30963 primitives) ..
+2024-09-28 15:51:18 INFO  ren0 [KDTreeBase] Finished -- took 130 ms.
+root weight: 8.000e-20
+node count: 1 -> 585 -> 585
+root weight: 8.000e-20
+node count: 1 -> 585 -> 585
+root weight: 8.000e-20
+node count: 1 -> 585 -> 585
+root weight: 8.000e-20
+node count: 1 -> 585 -> 585
+2024-09-28 15:51:18 INFO  ren0 [MIFocalGuidingPathTracer] Starting render job (1280x720, 8 cores, SSE2 enabled) ..
+2024-09-28 15:51:18 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 0, until 10.0 seconds
+Rendering: [                                            ] (2.6s, ETA: 6.4m)  Rendering: [                                            ] (5.2s, ETA: 5.1m)  Rendering: [+                                           ] (7.8s, ETA: 5.4m)  Rendering: [+                                           ] (10.4s, ETA: 5.0m)  
+2024-09-28 15:51:29 INFO  ren0 [MIFocalGuidingPathTracer]   10.45 seconds elapsed, passes this iteration: 4, total passes: 4
+root weight: 1.770e+06
+root weight: 1.825e+05
+building converging
+  node count: 585 -> 898 -> 720
+building diverging
+  node count: 585 -> 610 -> 446
+diverge probability: 0.093
+
+2024-09-28 15:51:29 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 1, until 20.0 seconds
+Rendering: [+                                           ] (13.8s, ETA: 5.1m)  Rendering: [++                                          ] (17.8s, ETA: 5.0m)  Rendering: [+++                                         ] (22.1s, ETA: 4.7m)  
+2024-09-28 15:51:40 INFO  ren0 [MIFocalGuidingPathTracer]   22.11 seconds elapsed, passes this iteration: 3, total passes: 7
+root weight: 2.194e+06
+root weight: 2.237e+05
+building converging
+  node count: 720 -> 845 -> 731
+building diverging
+  node count: 446 -> 463 -> 443
+diverge probability: 0.093
+
+2024-09-28 15:51:40 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 2, until 30.0 seconds
+Rendering: [+++                                         ] (27.6s, ETA: 4.6m)  Rendering: [++++                                        ] (31.3s, ETA: 4.5m)  
+2024-09-28 15:51:50 INFO  ren0 [MIFocalGuidingPathTracer]   31.26 seconds elapsed, passes this iteration: 2, total passes: 9
+root weight: 2.266e+06
+root weight: 2.310e+05
+building converging
+  node count: 731 -> 846 -> 731
+building diverging
+  node count: 443 -> 458 -> 442
+diverge probability: 0.092
+
+2024-09-28 15:51:50 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 3, until 40.0 seconds
+Rendering: [+++++                                       ] (35.8s, ETA: 4.5m)  Rendering: [+++++                                       ] (39.2s, ETA: 4.4m)  Rendering: [++++++                                      ] (42.8s, ETA: 4.4m)  
+2024-09-28 15:52:01 INFO  ren0 [MIFocalGuidingPathTracer]   42.79 seconds elapsed, passes this iteration: 3, total passes: 12
+root weight: 2.624e+06
+root weight: 3.069e+05
+building converging
+  node count: 731 -> 830 -> 748
+building diverging
+  node count: 442 -> 454 -> 444
+diverge probability: 0.105
+
+2024-09-28 15:52:01 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 4, until 50.0 seconds
+Rendering: [++++++                                      ] (46.4s, ETA: 4.3m)  Rendering: [+++++++                                     ] (50.2s, ETA: 4.2m)  
+2024-09-28 15:52:09 INFO  ren0 [MIFocalGuidingPathTracer]   50.18 seconds elapsed, passes this iteration: 2, total passes: 14
+root weight: 2.273e+06
+root weight: 2.709e+05
+building converging
+  node count: 748 -> 819 -> 775
+building diverging
+  node count: 444 -> 455 -> 450
+diverge probability: 0.106
+
+2024-09-28 15:52:09 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 5, until 60.0 seconds
+Rendering: [+++++++                                     ] (54.3s, ETA: 4.1m)  Rendering: [++++++++                                    ] (59.4s, ETA: 4.0m)  Rendering: [+++++++++                                   ] (1.1m, ETA: 4.0m)  
+2024-09-28 15:52:23 INFO  ren0 [MIFocalGuidingPathTracer]   64.37 seconds elapsed, passes this iteration: 3, total passes: 17
+root weight: 2.609e+06
+root weight: 3.597e+05
+building converging
+  node count: 775 -> 854 -> 789
+building diverging
+  node count: 450 -> 463 -> 451
+diverge probability: 0.121
+
+2024-09-28 15:52:23 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 6, until 70.0 seconds
+Rendering: [++++++++++                                  ] (1.2m, ETA: 3.9m)  Rendering: [++++++++++                                  ] (1.2m, ETA: 3.8m)  
+2024-09-28 15:52:32 INFO  ren0 [MIFocalGuidingPathTracer]   73.97 seconds elapsed, passes this iteration: 2, total passes: 19
+root weight: 2.092e+06
+root weight: 2.559e+05
+building converging
+  node count: 789 -> 846 -> 809
+building diverging
+  node count: 451 -> 455 -> 450
+diverge probability: 0.109
+
+2024-09-28 15:52:32 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 7, until 80.0 seconds
+Rendering: [+++++++++++                                 ] (1.3m, ETA: 3.7m)  Rendering: [++++++++++++                                ] (1.4m, ETA: 3.7m)  
+2024-09-28 15:52:41 INFO  ren0 [MIFocalGuidingPathTracer]   82.79 seconds elapsed, passes this iteration: 2, total passes: 21
+root weight: 1.957e+06
+root weight: 2.187e+05
+building converging
+  node count: 809 -> 880 -> 825
+building diverging
+  node count: 450 -> 456 -> 447
+diverge probability: 0.101
+
+2024-09-28 15:52:41 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 8, until 90.0 seconds
+Rendering: [++++++++++++                                ] (1.5m, ETA: 3.6m)  Rendering: [+++++++++++++                               ] (1.5m, ETA: 3.5m)  
+2024-09-28 15:52:51 INFO  ren0 [MIFocalGuidingPathTracer]   92.37 seconds elapsed, passes this iteration: 2, total passes: 23
+root weight: 2.112e+06
+root weight: 2.442e+05
+building converging
+  node count: 825 -> 911 -> 811
+building diverging
+  node count: 447 -> 460 -> 447
+diverge probability: 0.104
+
+2024-09-28 15:52:51 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 9, until 100.0 seconds
+Rendering: [++++++++++++++                              ] (1.6m, ETA: 3.4m)  Rendering: [+++++++++++++++                             ] (1.7m, ETA: 3.3m)  
+2024-09-28 15:53:02 INFO  ren0 [MIFocalGuidingPathTracer]   103.28 seconds elapsed, passes this iteration: 2, total passes: 25
+2024-09-28 15:53:02 INFO  ren0 [focal_path.cpp:370] starting iterative narrowing
+root weight: 1.878e+06
+root weight: 2.115e+05
+building converging
+  node count: 811 -> 883 -> 826
+building diverging
+  node count: 447 -> 451 -> 449
+diverge probability: 0.101
+
+2024-09-28 15:53:02 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 10, until 110.0 seconds
+Rendering: [+++++++++++++++                             ] (1.8m, ETA: 3.2m)  Rendering: [++++++++++++++++                            ] (1.9m, ETA: 3.1m)  
+2024-09-28 15:53:12 INFO  ren0 [MIFocalGuidingPathTracer]   113.86 seconds elapsed, passes this iteration: 2, total passes: 27
+root weight: 7.855e+05
+root weight: 5.406e+04
+building converging
+  node count: 826 -> 911 -> 851
+building diverging
+  node count: 449 -> 449 -> 427
+diverge probability: 0.064
+
+2024-09-28 15:53:12 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 11, until 120.0 seconds
+Rendering: [+++++++++++++++++                           ] (2.0m, ETA: 3.0m)  Rendering: [++++++++++++++++++                          ] (2.1m, ETA: 3.0m)  
+2024-09-28 15:53:23 INFO  ren0 [MIFocalGuidingPathTracer]   124.90 seconds elapsed, passes this iteration: 2, total passes: 29
+root weight: 5.974e+05
+root weight: 1.509e+04
+building converging
+  node count: 851 -> 954 -> 870
+building diverging
+  node count: 427 -> 427 -> 407
+diverge probability: 0.025
+
+2024-09-28 15:53:23 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 12, until 130.0 seconds
+Rendering: [+++++++++++++++++++                         ] (2.2m, ETA: 2.8m)  
+2024-09-28 15:53:29 INFO  ren0 [MIFocalGuidingPathTracer]   130.51 seconds elapsed, passes this iteration: 1, total passes: 30
+root weight: 3.693e+05
+root weight: 3.864e+03
+building converging
+  node count: 870 -> 967 -> 886
+building diverging
+  node count: 407 -> 407 -> 399
+diverge probability: 0.010
+
+2024-09-28 15:53:29 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 13, until 140.0 seconds
+Rendering: [+++++++++++++++++++                         ] (2.3m, ETA: 2.7m)  Rendering: [++++++++++++++++++++                        ] (2.4m, ETA: 2.7m)  
+2024-09-28 15:53:40 INFO  ren0 [MIFocalGuidingPathTracer]   141.61 seconds elapsed, passes this iteration: 2, total passes: 32
+root weight: 5.411e+05
+root weight: 1.066e+03
+building converging
+  node count: 886 -> 1006 -> 920
+building diverging
+  node count: 399 -> 399 -> 394
+diverge probability: 0.002
+
+2024-09-28 15:53:40 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 14, until 150.0 seconds
+Rendering: [+++++++++++++++++++++                       ] (2.5m, ETA: 2.5m)  Rendering: [+++++++++++++++++++++++                     ] (2.6m, ETA: 2.4m)  
+2024-09-28 15:53:57 INFO  ren0 [MIFocalGuidingPathTracer]   158.56 seconds elapsed, passes this iteration: 2, total passes: 34
+2024-09-28 15:53:57 INFO  ren0 [focal_path.cpp:388] final iteration
+root weight: 5.947e+05
+root weight: 2.886e+02
+building converging
+  node count: 920 -> 920 -> 741
+building diverging
+  node count: 394 -> 394 -> 394
+diverge probability: 0.000
+
+2024-09-28 15:53:57 INFO  ren0 [MIFocalGuidingPathTracer] ITERATION 15, until 300.0 seconds
+Rendering: [++++++++++++++++++++++++                    ] (2.7m, ETA: 2.3m)  Rendering: [++++++++++++++++++++++++                    ] (2.8m, ETA: 2.2m)  Rendering: [+++++++++++++++++++++++++                   ] (2.9m, ETA: 2.1m)  Rendering: [++++++++++++++++++++++++++                  ] (3.0m, ETA: 2.0m)  Rendering: [+++++++++++++++++++++++++++                 ] (3.1m, ETA: 1.9m)  Rendering: [+++++++++++++++++++++++++++                 ] (3.2m, ETA: 1.8m)  Rendering: [++++++++++++++++++++++++++++                ] (3.3m, ETA: 1.7m)  Rendering: [+++++++++++++++++++++++++++++               ] (3.3m, ETA: 1.7m)  Rendering: [++++++++++++++++++++++++++++++              ] (3.4m, ETA: 1.6m)  Rendering: [++++++++++++++++++++++++++++++              ] (3.5m, ETA: 1.5m)  Rendering: [+++++++++++++++++++++++++++++++             ] (3.6m, ETA: 1.4m)  Rendering: [++++++++++++++++++++++++++++++++            ] (3.7m, ETA: 1.3m)  Rendering: [+++++++++++++++++++++++++++++++++           ] (3.8m, ETA: 1.2m)  Rendering: [+++++++++++++++++++++++++++++++++           ] (3.8m, ETA: 1.2m)  Rendering: [++++++++++++++++++++++++++++++++++          ] (3.9m, ETA: 1.1m)  Rendering: [+++++++++++++++++++++++++++++++++++         ] (4.0m, ETA: 58.2s)  Rendering: [++++++++++++++++++++++++++++++++++++        ] (4.2m, ETA: 51.0s)  Rendering: [+++++++++++++++++++++++++++++++++++++       ] (4.2m, ETA: 46.1s)  Rendering: [+++++++++++++++++++++++++++++++++++++       ] (4.3m, ETA: 41.1s)  Rendering: [++++++++++++++++++++++++++++++++++++++      ] (4.4m, ETA: 35.1s)  Rendering: [+++++++++++++++++++++++++++++++++++++++     ] (4.5m, ETA: 29.0s)  Rendering: [++++++++++++++++++++++++++++++++++++++++    ] (4.6m, ETA: 23.1s)  Rendering: [+++++++++++++++++++++++++++++++++++++++++   ] (4.7m, ETA: 17.0s)  Rendering: [++++++++++++++++++++++++++++++++++++++++++  ] (4.8m, ETA: 11.0s)  Rendering: [+++++++++++++++++++++++++++++++++++++++++++ ] (4.9m, ETA: 6.0s)  Rendering: [++++++++++++++++++++++++++++++++++++++++++++] (5.0m, ETA: 0.0s)  
+2024-09-28 15:56:19 INFO  ren0 [MIFocalGuidingPathTracer]   300.77 seconds elapsed, passes this iteration: 26, total passes: 60
+2024-09-28 15:56:19 INFO  ren0 [RenderJob] Render time: 5.0156m
+2024-09-28 15:56:19 INFO  ren0 [HDRFilm] Writing image to "/mitsuba/./scene/modern-hall/modern-hall.exr" ..
+2024-09-28 15:56:19 INFO  main [statistics.cpp:142] Statistics:
+------------------------------------------------------------
+ * Loaded plugins :
+    -  plugins/area.so [Area light]
+    -  plugins/bitmap.so [Bitmap texture]
+    -  plugins/box.so [Box filter]
+    -  plugins/cube.so [Cube intersection primitive]
+    -  plugins/dielectric.so [Smooth dielectric BSDF]
+    -  plugins/difftrans.so [Diffuse transmitter]
+    -  plugins/diffuse.so [Smooth diffuse BRDF]
+    -  plugins/focal_path.so [MI focal guiding path tracer]
+    -  plugins/hdrfilm.so [High dynamic range film]
+    -  plugins/homogeneous.so [Homogeneous medium]
+    -  plugins/independent.so [Independent sampler]
+    -  plugins/isotropic.so [Isotropic phase function]
+    -  plugins/lanczos.so [Lanczos Sinc filter]
+    -  plugins/obj.so [OBJ triangle mesh loader]
+    -  plugins/perspective.so [Perspective camera]
+    -  plugins/rectangle.so [Rectangle intersection primitive]
+    -  plugins/roughconductor.so [Rough conductor BRDF]
+    -  plugins/roughplastic.so [Rough plastic BRDF]
+    -  plugins/twosided.so [Two-sided BRDF adapter]
+
+  * General :
+    -  Normal rays traced : 366.954 M
+    -  Shadow rays traced : 234.475 M
+
+  * Texture system :
+    -  Cumulative MIP map memory allocations : 22.780 MiB
+    -  Filtered texture lookups : 0.00 % (0.00 of 83.97 M)
+------------------------------------------------------------

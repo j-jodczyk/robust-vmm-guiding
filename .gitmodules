@@ -1,3 +1,0 @@
-[submodule "include/version1"]
-	path = include/vectorclass
-	url = https://github.com/vectorclass/version1.git
